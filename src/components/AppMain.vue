@@ -96,6 +96,91 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+  <div class="jumbo"></div>
+  <div class="containerCard">
+    <button class="series">Current series</button>
+    <AppCard
+      v-for="book in books"
+      :key="book.type"
+      :thumb="book.thumb"
+      :series="book.series"
+    >
+    </AppCard>
+    <button class="load">Load More</button>
+  </div>
+  <div class="icons">
+    <div class="iconMenu">
+      <img src="../assets/img/buy-comics-digital-comics.png" alt="" />
+      <p>DIGITAL COMICS</p>
+    </div>
+    <div class="iconMenu">
+      <img src="../assets/img/buy-comics-merchandise.png" alt="" />
+      <p>MERCHANDISE</p>
+    </div>
+    <div class="iconMenu">
+      <img src="../assets/img/buy-comics-subscriptions.png" alt="" />
+      <p>SUBSCRIPTION</p>
+    </div>
+    <div class="iconMenu">
+      <img src="../assets/img/buy-comics-shop-locator.png" alt="" />
+      <p>COMIC SHOP LOCATOR</p>
+    </div>
+    <div class="iconMenu">
+      <img src="../assets/img/buy-dc-power-visa.svg" alt="" />
+      <p>DC POWER VISA</p>
+    </div>
+  </div>
+</template>
 
-<style></style>
+<style lang="scss" scoped>
+@use "../assets/style/partial/variables" as *;
+.containerCard {
+  max-width: 1250px;
+  padding-top: 20px;
+  position: relative;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  .series {
+    @include buttonMain;
+
+    position: absolute;
+    top: -30px;
+    left: -10px;
+  }
+}
+.jumbo {
+  background-size: 100%;
+  background-position-x: center;
+  height: 350px;
+  background-image: url(../assets/img/jumbotron.jpg);
+}
+
+.load {
+  margin: 30px;
+  @include buttonMain;
+}
+.icons {
+  background-color: #0c7cec;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  height: 150px;
+}
+.iconMenu {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  p {
+    color: white;
+    margin-left: 10px;
+  }
+}
+img {
+  width: 45px;
+  height: 55px;
+}
+</style>

@@ -1,51 +1,7 @@
 <script>
 export default {
-  data() {
-    return {
-      NavMenu: [
-        {
-          name: CHARACTERS,
-          src: "#",
-          active: true,
-        },
-        {
-          name: COMICS,
-          src: "#",
-        },
-        {
-          name: MOVIES,
-          src: "#",
-        },
-        {
-          name: TV,
-          src: "#",
-        },
-        {
-          name: GAMES,
-          src: "#",
-        },
-        {
-          name: COLLECTIBLES,
-          src: "#",
-        },
-        {
-          name: VIDEOS,
-          src: "#",
-        },
-        {
-          name: FANS,
-          src: "#",
-        },
-        {
-          name: NEWS,
-          src: "#",
-        },
-        {
-          name: SHOP,
-          src: "#",
-        },
-      ],
-    };
+  props: {
+    NavMenu: Array,
   },
 };
 </script>
@@ -58,14 +14,24 @@ export default {
   </ul>
 </template>
 
-<style>
-.menu {
-  height: 100%;
-}
+<style lang="scss" scoped>
 ul {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
   list-style: none;
+  gap: 1rem;
 }
+a {
+  text-decoration: none;
+}
+/* li a::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 5px;
+  background-color: #0282f9;
+  position: absolute;
+  top: 71px;
+  left: 49px;
+} */
 </style>

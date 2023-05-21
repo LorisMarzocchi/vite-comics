@@ -4,13 +4,49 @@ import AppNavBar from "./AppNavBar.vue";
 export default {
   data() {
     return {
-      logoImgName: "dc-logo.png",
+      NavMenu: [
+        {
+          name: "CHARACTERS",
+          src: "#",
+        },
+        {
+          name: "COMICS",
+          src: "#",
+        },
+        {
+          name: "MOVIES",
+          src: "#",
+        },
+        {
+          name: "TV",
+          src: "#",
+        },
+        {
+          name: "GAMES",
+          src: "#",
+        },
+        {
+          name: "COLLECTIBLES",
+          src: "#",
+        },
+        {
+          name: "VIDEOS",
+          src: "#",
+        },
+        {
+          name: "FANS",
+          src: "#",
+        },
+        {
+          name: "NEWS",
+          src: "#",
+        },
+        {
+          name: "SHOP",
+          src: "#",
+        },
+      ],
     };
-  },
-  methods: {
-    getImagePath(img) {
-      return new URL(`../assets/img/${img}`, import.meta.url).href;
-    },
   },
   components: {
     AppNavBar,
@@ -20,16 +56,20 @@ export default {
 
 <template>
   <header>
-    <img :src="getImagePath(logoImgName)" alt="" />
-    <AppNavBar />
+    <img src="../assets/img/dc-logo.png" alt="" />
+    <AppNavBar :NavMenu="NavMenu" />
   </header>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 header {
-  max-width: 1000px;
+  padding-inline: 100px;
   height: 120px;
   margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
 }
 img {
   height: 100px;

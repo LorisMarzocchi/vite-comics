@@ -1,7 +1,32 @@
 <script>
-export default {};
+export default {
+  props: {
+    price: String,
+    series: String,
+    type: String,
+    thumb: String,
+  },
+};
 </script>
 
-<template></template>
+<template>
+  <div class="card">
+    <img :src="thumb" alt="" />
+    <p>{{ series }}</p>
+  </div>
+</template>
 
-<style></style>
+<style lang="scss" scoped>
+.card {
+  margin: 20px;
+  width: calc((100% / 6) - 40px);
+  height: 100%;
+  p {
+    color: white;
+  }
+}
+img {
+  width: 100%;
+  height: 250px;
+}
+</style>
