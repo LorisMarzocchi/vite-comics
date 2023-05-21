@@ -1,5 +1,5 @@
 <script>
-import Card from "./Card.vue";
+import AppCard from "./AppCard.vue";
 export default {
   data() {
     return {
@@ -91,7 +91,7 @@ export default {
   },
 
   components: {
-    Card,
+    AppCard,
   },
 };
 </script>

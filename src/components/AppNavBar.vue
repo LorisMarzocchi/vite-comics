@@ -6,6 +6,7 @@ export default {
         {
           name: CHARACTERS,
           src: "#",
+          active: true,
         },
         {
           name: COMICS,
@@ -46,16 +47,13 @@ export default {
       ],
     };
   },
-  props: {
-    NavMenu: String,
-  },
 };
 </script>
 
 <template>
   <ul>
-    <li v-for="menuElemet in NavMenu" :key="menuElemet.name">
-      <a href="#">{{ menuElemet.name }}</a>
+    <li v-for="eleMenu in NavMenu" :key="eleMenu.name">
+      <a href="#">{{ eleMenu.name }}</a>
     </li>
   </ul>
 </template>
